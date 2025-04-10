@@ -20,13 +20,13 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t $IMAGE_NAME .
+          sudo docker build -t $IMAGE_NAME .
 
       - name: Stop and remove existing container (if any)
         run: |
-          docker stop $CONTAINER_NAME || true
-          docker rm $CONTAINER_NAME || true
+          sudo docker stop $CONTAINER_NAME || true
+          sudo docker rm $CONTAINER_NAME || true
 
       - name: Run Docker container
         run: |
-          docker run -d --name $CONTAINER_NAME -p 80:$PORT $IMAGE_NAME
+          sudo docker run -d --name $CONTAINER_NAME -p 80:$PORT $IMAGE_NAME
