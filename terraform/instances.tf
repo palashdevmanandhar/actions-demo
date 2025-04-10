@@ -60,7 +60,7 @@ module "ec2_instance" {
 
 
 # main.tf
-module "ec2_instance" {
+module "node_instance" {
   source = "terraform-aws-modules/ec2-instance/aws"
 
   name          = "node-instance"
