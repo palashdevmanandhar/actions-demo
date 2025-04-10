@@ -7,7 +7,7 @@ on:
 
 jobs:
   build-and-run:
-    runs-on: [self-hosted, my-node-runner]
+    runs-on: my-node-runner
 
     env:
       IMAGE_NAME: my-local-app
