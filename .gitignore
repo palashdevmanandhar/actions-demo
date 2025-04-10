@@ -1,0 +1,10 @@
+# Terraform files
+*.tfstate
+*.tfstate.backup
+*.tfvars
+*.tfplan
+
+# Terraform directories
+./terraform/.terraform
+/terraform/.terraform
+.terraform/
