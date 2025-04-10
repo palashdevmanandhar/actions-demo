@@ -1,0 +1,32 @@
+name: Build and Run Locally on Self-Hosted Runner
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-run:
+    runs-on: [self-hosted, my-node-runner]
+
+    env:
+      IMAGE_NAME: my-local-app
+      CONTAINER_NAME: my-local-container
+      PORT: 3000
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Build Docker image
+        run: |
+          docker build -t $IMAGE_NAME .
+
+      - name: Stop and remove existing container (if any)
+        run: |
+          docker stop $CONTAINER_NAME || true
+          docker rm $CONTAINER_NAME || true
+
+      - name: Run Docker container
+        run: |
+          docker run -d --name $CONTAINER_NAME -p 80:$PORT $IMAGE_NAME
