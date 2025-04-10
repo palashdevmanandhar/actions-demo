@@ -4,7 +4,7 @@ variable "project_name" {
   type        = string
 }
 
-variable "main_region" {
+variable "region" {
   description = "my deafult region"
   default     = "us-east-1"
   type        = string
