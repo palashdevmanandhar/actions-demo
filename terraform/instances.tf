@@ -59,21 +59,17 @@ module "ec2_instance" {
 
 
 
-# module "ec2" {
-#   source  = "terraform-aws-modules/ec2-instance/aws"
-#   version = "~> 5.0"
+# main.tf
+module "ec2_instance" {
+  source = "terraform-aws-modules/ec2-instance/aws"
 
-#   name = "my-ec2"
+  name          = "node-instance"
+  ami           = data.aws_ami.aws_linux.id # Replace with your desired AMI ID
+  instance_type = var.instance_type
 
-#   ami           = data.aws_ami.aws_linux.id # Replace with your region-specific AMI
-#   instance_type = var.instance_type
+  vpc_security_group_ids = [aws_security_group.ec2_sg.id]
 
-#   subnet_id                   = module.demo_vpc.public_subnets[0]
-#   vpc_security_group_ids      = [module.web_sg.security_group_id]
-#   associate_public_ip_address = true
-
-#   tags = {
-#     Environment = "dev"
-#     Project     = "myapp"
-#   }
-# }
+  tags = {
+    Name = "node-instance"
+  }
+}
