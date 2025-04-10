@@ -15,6 +15,9 @@ data "aws_availability_zones" "available" {
   state = "available"
 }
 
-data "aws_vpc" "default" {
-  default = true
+data "aws_rds_engine_version" "sql_2022" {
+  engine = "sqlserver-web"
+
+  engine_version      = "16"
+  parameter_group_family = "sqlserver-se-16.0"
 }
