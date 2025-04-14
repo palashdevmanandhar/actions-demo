@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "aws" {
-  region = var.main_region
+  region = var.region
   default_tags {
     tags = {
       Environment = "dev"
@@ -20,7 +20,7 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    bucket         = "tf-state-react-jenkin-12312"
+    bucket         = "tf-state-react-jenkin-12"
     key            = "terraform/state/terraform.tfstate"
     region         = "us-east-1"
     dynamodb_table = "terraform-state-lock"

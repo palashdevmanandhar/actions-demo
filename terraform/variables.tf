@@ -28,3 +28,10 @@ variable "repo_name" {
   default     = "my-node-image-holder"
   type        = string
 }
+
+variable "public_subnets_count" {
+  description = "Number of public subnets required"
+  default     = 2
+  type        = number
+}
+

@@ -5,8 +5,8 @@ resource "aws_security_group" "rds_sg" {
 
   ingress {
     description = "SSH"
-    from_port   = 1443
-    to_port     = 1443
+    from_port   = 1433
+    to_port     = 1433
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
