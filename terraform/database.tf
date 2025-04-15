@@ -66,8 +66,9 @@
 
 resource "aws_db_instance" "rds_sql_server" {
   allocated_storage          = 20
-  auto_minor_version_upgrade = false
+  auto_minor_version_upgrade = true
   backup_target              = "region"
+  copy_tags_to_snapshot     = true
   db_name                    = null
   db_subnet_group_name       = aws_db_subnet_group.default.name
   delete_automated_backups   = true
