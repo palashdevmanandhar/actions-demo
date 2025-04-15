@@ -18,6 +18,7 @@ resource "aws_security_group" "rds_sg" {
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
     description = "All ports opend for outbound traffic"
+    #checkov:skip=CKV_AWS_382:Needs access to the internet for updates
   }
 
   tags = {
