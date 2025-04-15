@@ -3,7 +3,7 @@ name: Terraform Deployment
 on:
   push:
     branches:
-      - infra-dev  # or 'master', depending on your default branch
+      - feat-checkov-integation  # or 'master', depending on your default branch
 
 permissions:
   contents: read
