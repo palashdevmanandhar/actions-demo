@@ -9,7 +9,6 @@ resource "aws_security_group" "rds_sg" {
     to_port     = 1433
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
-    description = "Opens port for conection to sql server"
   }
 
   egress {
@@ -17,7 +16,6 @@ resource "aws_security_group" "rds_sg" {
     to_port     = 0
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
-    description = "All ports opend for outbound traffic"
   }
 
   tags = {
