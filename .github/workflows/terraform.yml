@@ -11,7 +11,7 @@ permissions:
 jobs:
   terraform:
     name: Terraform Init & Apply
-    runs-on: test-label
+    runs-on: ubuntu-latest
 
     steps:
       - name: 📦 Checkout repository
