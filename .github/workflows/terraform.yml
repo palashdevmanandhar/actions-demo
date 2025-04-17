@@ -9,7 +9,7 @@ permissions:
   contents: read
 
 jobs:
-  terraform:
+  terraform-test:
     name: Terraform Init & Apply
     runs-on: ubuntu-latest
 
