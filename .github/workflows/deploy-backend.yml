@@ -7,7 +7,7 @@ on:
 
 jobs:
   build-and-run:
-    runs-on: node-runner
+    runs-on: test-label
 
     env:
       IMAGE_NAME: my-local-app
