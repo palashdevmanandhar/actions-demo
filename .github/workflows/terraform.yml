@@ -21,6 +21,9 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: 3.8
+      
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3    
 
       - name: Test with Checkov
         id: checkov
